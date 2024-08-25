@@ -1,4 +1,5 @@
 const tds = document.getElementsByTagName("td");
+const strokeWidth = 4;
 
 for (const td of tds) {
   td.addEventListener("click", onClick);
@@ -11,4 +12,10 @@ function onClick(e) {
 function addX(svg) {
   const xSvg = "<line x1=\"0\" y1=\"0\" x2=\"100%\" y2=\"100%\" /><line x1=\"100%\" y1=\"0\" x2=\"0\" y2=\"100%\" />";
   svg.innerHTML = xSvg;
+}
+
+function addCircle(svg) {
+  console.log(svg.width);
+  const circleSvg = "<circle cx=\"50%\" cy=\"50%\" r=\"50%\" fill=\"none\" />"
+  svg.innerHTML = circleSvg;
 }
