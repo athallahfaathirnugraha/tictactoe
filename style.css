@@ -60,7 +60,7 @@ svg {
 
 circle, line {
   animation-name: pick;
-  animation-duration: .5s;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
 }
 
