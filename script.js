@@ -1,5 +1,4 @@
 const tds = document.getElementsByTagName("td");
-const strokeWidth = 4;
 
 for (const td of tds) {
   td.addEventListener("click", onClick);
