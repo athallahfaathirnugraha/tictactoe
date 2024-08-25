@@ -2,6 +2,7 @@ const xSvg = "<line x1=\"0\" y1=\"0\" x2=\"100%\" y2=\"100%\" /><line x1=\"100%\
 const circleSvg = "<circle cx=\"50%\" cy=\"50%\" r=\"50%\" fill=\"none\" />";
 
 let turn = "x";
+let finished = false;
 const tds = document.getElementsByTagName("td");
 
 let board = [
@@ -15,6 +16,8 @@ for (const td of tds) {
 }
 
 function onClick(e) {
+  if (finished) return;
+
   const element = e.currentTarget;
   
   const x = parseInt(element.getAttribute("x"));
@@ -49,6 +52,8 @@ function onClick(e) {
     }
 
     document.body.appendChild(svg);
+
+    finished = true;
   }
 }
 
