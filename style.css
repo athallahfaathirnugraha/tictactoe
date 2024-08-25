@@ -57,6 +57,19 @@ svg {
 }
 
 circle, line {
-  stroke: var(--palette-3);
-  stroke-width: 4px;
+  animation-name: pick;
+  animation-duration: .5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes pick {
+  from {
+    stroke: var(--palette-2);
+    stroke-width: 0;
+  }
+
+  to {
+    stroke: var(--palette-3);
+    stroke-width: 4px;
+  }
 }
