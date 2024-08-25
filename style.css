@@ -54,6 +54,9 @@ svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
 
-  background-color: red;
+line {
+  stroke: var(--palette-3);
+  stroke-width: 4px;
 }
