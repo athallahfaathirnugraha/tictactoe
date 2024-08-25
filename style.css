@@ -1,3 +1,11 @@
+:root {
+  --palette-1: #1D1E2C;
+  --palette-2: #50723C;
+  --palette-3: #63B995;
+  --palette-4: #86DEB7;
+  --palette-5: #ADEEE3;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -5,6 +13,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: var(--palette-1);
 }
 
 table, tr, td {
@@ -12,7 +22,7 @@ table, tr, td {
 }
 
 td {
-  border: 4px solid black;
+  border: 4px solid var(--palette-2);
   width: 13vmin;
   height: 13vmin;
 }
