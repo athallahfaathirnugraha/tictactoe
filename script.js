@@ -23,29 +23,30 @@ function onClick(e) {
 
   switch (turn) {
     case "x":
-      addX(e.currentTarget.children[0]);
+      setX(e.currentTarget.children[0]);
       turn = "o";
       break;
     case "o":
-      addCircle(e.currentTarget.children[0]);
+      setCircle(e.currentTarget.children[0]);
       turn = "x";
       break;
   }
 
   const win = checkWin(board);
-  console.log(win);
 
   if (win !== null) {
     alert(`${win} won`);
   }
 }
 
-function addX(svg) {
+// only html, doesn't set the turn/anything else
+function setX(svg) {
   const xSvg = "<line x1=\"0\" y1=\"0\" x2=\"100%\" y2=\"100%\" /><line x1=\"100%\" y1=\"0\" x2=\"0\" y2=\"100%\" />";
   svg.innerHTML = xSvg;
 }
 
-function addCircle(svg) {
+// only html, doesn't set the turn/anything else
+function setCircle(svg) {
   const circleSvg = "<circle cx=\"50%\" cy=\"50%\" r=\"50%\" fill=\"none\" />"
   svg.innerHTML = circleSvg;
 }
@@ -64,13 +65,16 @@ function checkWin(board) {
   }
 
   // diagonal
-  if (board[0][0] === "" || board[1][1] === "" || board[2][2] === "" || board[0][2] === "" || board[2][0] === "") return null;
+  if (!(board[0][0] === "" || board[1][1] === "" || board[2][2] === "")) {
+    if (board[0][0] === board[1][1] && board[1][1] === board[2][2]) {
+      return board[0][0];
+    }
+  }
 
-  if (
-    board[0][0] === board[1][1] && board[1][1] === board[2][2] ||
-    board[0][2] === board[1][1] && board[1][1] === board[2][0]
-  ) {
-    return board[0][0];
+  if (!(board[0][2] === "" || board[1][1] === "" || board[2][0])) {
+    if (board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
+      return board[0][2];
+    }
   }
 
   return null;
