@@ -62,7 +62,7 @@ svg.xo {
   transform: translate(-50%, -50%);
 }
 
-circle, line, polygon {
+circle, line {
   animation-name: pick;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
@@ -89,7 +89,7 @@ svg#win-svg {
   height: 30vmin;
 }
 
-svg#win-svg circle, svg#win-svg line, svg#win-svg polygon {
+svg#win-svg circle, svg#win-svg line {
   animation-name: pick-win;
 }
 
