@@ -1,3 +1,4 @@
+let turn = "x";
 const tds = document.getElementsByTagName("td");
 
 for (const td of tds) {
@@ -5,7 +6,16 @@ for (const td of tds) {
 }
 
 function onClick(e) {
-  addX(e.currentTarget.children[0]);
+  switch (turn) {
+    case "x":
+      addX(e.currentTarget.children[0]);
+      turn = "o";
+      break;
+    case "o":
+      addCircle(e.currentTarget.children[0]);
+      turn = "x";
+      break;
+  }
 }
 
 function addX(svg) {
