@@ -35,7 +35,9 @@ function onClick(e) {
   const win = checkWin(board);
 
   if (win !== null) {
-    alert(`${win} won`);
+    const element = document.createElement("winmsg");
+    element.innerHTML = `${win} won!`;
+    document.body.appendChild(element);
   }
 }
 
@@ -54,13 +56,13 @@ function setCircle(svg) {
 function checkWin(board) {
   // horizontal
   for (let i = 0; i < 3; i++) {
-    if (board[i][0] === "" || board[i][1] === "" || board[i][2] === "") break;
+    if (board[i][0] === "" || board[i][1] === "" || board[i][2] === "") continue;
     if (board[i][0] === board[i][1] && board[i][1] === board[i][2]) return board[i][0];
   }
 
   // vertical
   for (let i = 0; i < 3; i++) {
-    if (board[0][i] === "" || board[1][i] === "" || board[2][i] === "") break;
+    if (board[0][i] === "" || board[1][i] === "" || board[2][i] === "") continue;
     if (board[0][i] === board[1][i] && board[1][i] === board[2][i]) return board[0][i];
   }
 
@@ -71,7 +73,7 @@ function checkWin(board) {
     }
   }
 
-  if (!(board[0][2] === "" || board[1][1] === "" || board[2][0])) {
+  if (!(board[0][2] === "" || board[1][1] === "" || board[2][0] === "")) {
     if (board[0][2] === board[1][1] && board[1][1] === board[2][0]) {
       return board[0][2];
     }
