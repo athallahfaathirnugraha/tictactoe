@@ -1,0 +1,34 @@
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+table, tr, td {
+  border-collapse: collapse;
+}
+
+td {
+  border: 4px solid black;
+  width: 13vmin;
+  height: 13vmin;
+}
+
+tr:first-child td {
+  border-top: none;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr td:first-child {
+  border-left: none;
+}
+
+tr td:last-child {
+  border-right: none;
+}
