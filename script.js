@@ -1,6 +1,12 @@
 const xSvg = "<line x1=\"0\" y1=\"0\" x2=\"100%\" y2=\"100%\" /><line x1=\"100%\" y1=\"0\" x2=\"0\" y2=\"100%\" />";
 const circleSvg = "<circle cx=\"50%\" cy=\"50%\" r=\"50%\" fill=\"none\" />";
 
+const triangleSvg = `
+  <line x1="0" y1="100%" x2="100%" y2="100%" />
+  <line x1="100%" y1="100%" x2="50%" y2="0" />
+  <line x1="50%" y1="0" x2="0" y2="100%" />
+`;
+
 let turn = "x";
 let finished = false;
 const tds = document.getElementsByTagName("td");
@@ -49,6 +55,8 @@ function onClick(e) {
       svg.innerHTML = xSvg;
     } else if (win === "o") {
       svg.innerHTML = circleSvg;
+    } else if (win === "draw") {
+      svg.innerHTML = triangleSvg;
     }
 
     document.body.appendChild(svg);
@@ -65,6 +73,16 @@ function setX(svg) {
 // only html, doesn't set the turn/anything else
 function setCircle(svg) {
   svg.innerHTML = circleSvg;
+}
+
+function isFull(board) {
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      if (board[i][j] === "") return false;
+    }
+  }
+
+  return true;
 }
 
 function checkWin(board) {
@@ -92,6 +110,8 @@ function checkWin(board) {
       return board[0][2];
     }
   }
+
+  if (isFull(board)) return "draw";
 
   return null;
 }
