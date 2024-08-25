@@ -5,6 +5,8 @@
   --palette-4: #86DEB7;
   --palette-5: #ADEEE3;
 
+  --win-color: #91FF51;
+
   --border-size: 8px;
   --border-size-win: 30px;
 }
@@ -98,7 +100,7 @@ svg#win-svg circle, svg#win-svg line {
   }
 
   to {
-    stroke: var(--palette-3);
+    stroke: var(--win-color);
     stroke-width: var(--border-size-win);
   }
 }
