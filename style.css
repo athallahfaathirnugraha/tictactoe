@@ -17,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 80px;
+  gap: 9vmin;
 
   background-color: var(--palette-1);
 }
@@ -83,8 +83,8 @@ line:nth-child(2) {
 }
 
 svg#win-svg {
-  width: 39vmin;
-  height: 39vmin;
+  width: 30vmin;
+  height: 30vmin;
 }
 
 svg#win-svg circle, svg#win-svg line {
