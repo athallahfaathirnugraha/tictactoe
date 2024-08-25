@@ -15,7 +15,6 @@ function addX(svg) {
 }
 
 function addCircle(svg) {
-  console.log(svg.width);
   const circleSvg = "<circle cx=\"50%\" cy=\"50%\" r=\"50%\" fill=\"none\" />"
   svg.innerHTML = circleSvg;
 }
