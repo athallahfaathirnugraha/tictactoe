@@ -9,25 +9,21 @@
 
 <body>
 
-  <table>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+  <script>
+    document.write("<table>");
 
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+    for (let i = 0; i < 3; i++) {
+      document.write("<tr>");
 
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </table>
+      for (let j = 0; j < 3; j++) {
+        document.write("<td><svg width=\"124\" height=\"124\"></svg></td>");
+      }
+
+      document.write("</tr>");
+    }
+
+    document.write("</table>");
+  </script>
 
 </body>
 
