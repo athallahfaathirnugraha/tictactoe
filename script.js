@@ -1,11 +1,26 @@
 let turn = "x";
 const tds = document.getElementsByTagName("td");
 
+let board = [
+  ["", "", ""],
+  ["", "", ""],
+  ["", "", ""]
+];
+
 for (const td of tds) {
   td.addEventListener("click", onClick);
 }
 
 function onClick(e) {
+  const element = e.currentTarget;
+  
+  const x = parseInt(element.getAttribute("x"));
+  const y = parseInt(element.getAttribute("y"));
+
+  if (board[y][x] !== "") return;
+
+  board[y][x] = turn;
+
   switch (turn) {
     case "x":
       addX(e.currentTarget.children[0]);
