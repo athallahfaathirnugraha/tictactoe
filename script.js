@@ -1,3 +1,6 @@
+const xSvg = "<line x1=\"0\" y1=\"0\" x2=\"100%\" y2=\"100%\" /><line x1=\"100%\" y1=\"0\" x2=\"0\" y2=\"100%\" />";
+const circleSvg = "<circle cx=\"50%\" cy=\"50%\" r=\"50%\" fill=\"none\" />";
+
 let turn = "x";
 const tds = document.getElementsByTagName("td");
 
@@ -35,21 +38,27 @@ function onClick(e) {
   const win = checkWin(board);
 
   if (win !== null) {
-    const element = document.createElement("winmsg");
-    element.innerHTML = `${win} won!`;
-    document.body.appendChild(element);
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.id = "win-svg";
+    svg.setAttribute("overflow", "visible");
+
+    if (win === "x") {
+      svg.innerHTML = xSvg;
+    } else if (win === "o") {
+      svg.innerHTML = circleSvg;
+    }
+
+    document.body.appendChild(svg);
   }
 }
 
 // only html, doesn't set the turn/anything else
 function setX(svg) {
-  const xSvg = "<line x1=\"0\" y1=\"0\" x2=\"100%\" y2=\"100%\" /><line x1=\"100%\" y1=\"0\" x2=\"0\" y2=\"100%\" />";
   svg.innerHTML = xSvg;
 }
 
 // only html, doesn't set the turn/anything else
 function setCircle(svg) {
-  const circleSvg = "<circle cx=\"50%\" cy=\"50%\" r=\"50%\" fill=\"none\" />"
   svg.innerHTML = circleSvg;
 }
 

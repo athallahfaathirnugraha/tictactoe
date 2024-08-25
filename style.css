@@ -6,6 +6,7 @@
   --palette-5: #ADEEE3;
 
   --border-size: 8px;
+  --border-size-win: 30px;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 80px;
 
   background-color: var(--palette-1);
 }
@@ -48,7 +50,7 @@ tr td:last-child {
   border-right: none;
 }
 
-svg {
+svg.xo {
   width: calc(100% - 20px);
   height: calc(100% - 20px);
 
@@ -77,5 +79,26 @@ line:nth-child(2) {
   to {
     stroke: var(--palette-3);
     stroke-width: var(--border-size);
+  }
+}
+
+svg#win-svg {
+  width: 39vmin;
+  height: 39vmin;
+}
+
+svg#win-svg circle, svg#win-svg line {
+  animation-name: pick-win;
+}
+
+@keyframes pick-win {
+  from {
+    stroke: var(--palette-3);
+    stroke-width: 0;
+  }
+
+  to {
+    stroke: var(--palette-3);
+    stroke-width: var(--border-size-win);
   }
 }
