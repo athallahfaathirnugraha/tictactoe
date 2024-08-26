@@ -22,6 +22,12 @@ body {
   gap: 9vmin;
 
   background-color: var(--palette-1);
+
+  transition: .7s ease-out;
+}
+
+body[win] {
+  background-color: var(--palette-2);
 }
 
 @media screen and (orientation:portrait) {

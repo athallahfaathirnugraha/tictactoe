@@ -60,6 +60,7 @@ function onClick(e) {
     }
 
     document.body.appendChild(svg);
+    document.body.setAttribute("win", "");
 
     finished = true;
   }
