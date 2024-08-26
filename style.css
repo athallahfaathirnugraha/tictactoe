@@ -24,6 +24,18 @@ body {
   background-color: var(--palette-1);
 }
 
+@media screen and (orientation:portrait) {
+  body {
+    flex-direction: column;
+  }
+}
+
+@media screen and (orientation:landscape) {
+  body {
+    flex-direction: row;
+  }
+}
+
 table, tr, td {
   border-collapse: collapse;
 }
